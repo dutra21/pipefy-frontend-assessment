@@ -1,0 +1,15 @@
+@import "../shared/styles/commons.scss";
+
+.home {
+    padding: 0 2.5rem;
+
+    &__title {
+        margin-top: 0;
+    }
+
+    &__text {
+        color: $gray;
+        font-size: 1.17rem;
+        font-weight: 500;
+    }
+}

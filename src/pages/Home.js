@@ -1,4 +1,5 @@
 import PipeList from "../components/pipeList/PipeList"
+import "../pages/home.scss"
 
 function Home() {
 

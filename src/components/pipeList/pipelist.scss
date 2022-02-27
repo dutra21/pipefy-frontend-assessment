@@ -1,0 +1,7 @@
+.pipe-list {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}

@@ -3,6 +3,7 @@ import { ORGANIZATION } from "../../graphql/organization"
 import { ORGANIZATION_ID } from "../../shared/constants/constants";
 import { IPipe } from "../../shared/interfaces/pipe.interface"
 import Pipe from "../pipe/Pipe";
+import "./pipelist.scss"
 
 function PipeList() {
     const {loading, data, error} = useQuery(ORGANIZATION, {
@@ -12,7 +13,7 @@ function PipeList() {
     if(loading) return <h1>Loading...</h1>
     if(error) return <h1>Ops... something is worng</h1>
     if(data) {
-        console.log(data)
+        console.log(data.organization.pipes)
     }
     const pipes = data?.organization?.pipes
                     .map((pipe: IPipe) => pipe)

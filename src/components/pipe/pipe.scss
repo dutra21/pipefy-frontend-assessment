@@ -1,0 +1,71 @@
+@import "../../shared/styles/commons.scss";
+
+.card {
+    padding: 1rem;
+    background-color: lighten(gray, 38%);
+    border-radius: 10%;
+    text-align: center;
+    max-width: 250px;
+    height: 230px;
+
+    &__top-info {
+        display: flex;
+        justify-content: space-between;
+        height: 25px;
+    }
+
+    &__content{
+        height: calc(100% - 20px);
+    }
+
+    &__name {
+        margin: 0;
+    }
+
+    &__icon {
+        width: 30%;
+        height: 30%;
+        display: inline-block;
+        position: relative; 
+        padding: 1rem 0;
+    }
+
+    &__btn {
+        background: none;
+        border: none;
+    }
+
+    .btn__icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    &--blue {
+        background-color: lighten($blue, 38%);
+    }
+    
+    &--cyan {
+        background-color: lighten($cyan, 38%);
+    }
+    
+    &--gray {
+        background-color: lighten($gray, 38%);
+    }
+    
+    &--green {
+        background-color: lighten($green, 38%);
+    }
+    
+    &--orange {
+        background-color: lighten($orange, 38%);
+    }
+    
+    &--pink {
+        background-color: lighten($pink, 38%);
+    }
+    
+    &--purple {
+        background-color: lighten($purple, 38%);
+    }
+
+}
