@@ -9,3 +9,9 @@ $purple: #8255a5;
 .pointer {
     cursor: pointer;
 }
+
+button[class^='btn'] {
+    border: none;
+    background: none;
+    cursor: pointer;
+}

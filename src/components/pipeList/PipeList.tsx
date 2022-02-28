@@ -1,8 +1,10 @@
 import { useQuery } from "@apollo/client";
 import { ORGANIZATION } from "../../graphql/organization"
 import { ORGANIZATION_ID } from "../../shared/constants/constants";
-import { IPipe } from "../../shared/interfaces/pipe.interface"
-import Pipe from "../pipe/Pipe";
+import { IPipe } from "../../shared/interfaces/pipe.interface";
+import { ModalProvider } from "../modal/modal.context";
+import Modal from "../modal/Modal.js";
+import Pipe from "../pipe/Pipe.js";
 import "./pipelist.scss"
 
 function PipeList() {
@@ -12,9 +14,7 @@ function PipeList() {
 
     if(loading) return <h1>Loading...</h1>
     if(error) return <h1>Ops... something is worng</h1>
-    if(data) {
-        console.log(data)
-    }
+    
     const pipes = data?.organization?.pipes
             .map((pipe: IPipe) => pipe)
             .sort((pipeA: IPipe, pipeB: IPipe) =>
@@ -22,15 +22,18 @@ function PipeList() {
             )
 
     return (
-        <div>
-            <ul className="pipe-list">
-                {pipes?.map((pipe: IPipe) => (
-                    <li className="pipe-list__item">
-                        <Pipe  key={pipe.id} pipe={pipe}/> 
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ModalProvider>
+            <div>
+                <ul className="pipe-list">
+                    {pipes?.map((pipe: IPipe) => (
+                        <li className="pipe-list__item">
+                            <Pipe  key={pipe.id} pipe={pipe}/> 
+                        </li>
+                    ))}
+                </ul>
+                <Modal />
+            </div>
+        </ModalProvider>
     )
 }
 

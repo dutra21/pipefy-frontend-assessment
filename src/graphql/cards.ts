@@ -1,28 +1,23 @@
 import { gql } from "@apollo/client";
 
-export const CARDS = `
+export const CARDS = gql`
     query cards(
-        $card_id: ID!
+        $pipeId: ID!
         $first: Int
-        $after: Int
     ) {
         cards(
-            pipe_id: $card_id
+            pipe_id: $pipeId
             first: $first
-            after: $after
         ) {
             edges {
-                cursor
                 node {
+                    current_phase {
+                        color
+                        name
+                    }
                     id
                     title
                 }
-            }
-            pageInfo {
-                endCursor
-                hasNextPage
-                hasPreviousPage
-                startCursor
             }
         }
     }

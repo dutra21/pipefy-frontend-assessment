@@ -6,7 +6,8 @@
     border-radius: 10%;
     text-align: center;
     min-width: 100px;
-    height: 185px;
+    max-width: 250px;
+    height: 215px;
 
     &__top-info {
         display: flex;
@@ -37,12 +38,6 @@
     &__icon {
         width: 40px;
         height: 40px;
-    }
-
-    &__btn {
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 
     .btn__icon {
