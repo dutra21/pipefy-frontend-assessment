@@ -6,7 +6,9 @@ function Home() {
     return (
         <div className="home">
             <h2 className="home__title">Your pipes</h2>
-            <p className="home__text">Here are all your processes <a className="home__link" href="">learn more</a>.</p>
+            <p className="home__text">
+                Here are all your processes <a className="home__link" href="https://www.pipefy.com/" target="_blank">learn more</a>.
+            </p>
             <PipeList />
         </div>
     )

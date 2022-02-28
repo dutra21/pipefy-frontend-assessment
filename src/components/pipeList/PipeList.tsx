@@ -13,21 +13,24 @@ function PipeList() {
     if(loading) return <h1>Loading...</h1>
     if(error) return <h1>Ops... something is worng</h1>
     if(data) {
-        console.log(data.organization.pipes)
+        console.log(data)
     }
     const pipes = data?.organization?.pipes
-                    .map((pipe: IPipe) => pipe)
-                    .sort((pipeA: IPipe, pipeB: IPipe) =>
-                        pipeA.name!.trim().localeCompare(pipeB.name!.trim())
-                    )
+            .map((pipe: IPipe) => pipe)
+            .sort((pipeA: IPipe, pipeB: IPipe) =>
+                pipeA.name!.trim().localeCompare(pipeB.name!.trim())
+            )
+
     return (
-        <ul className="pipe-list">
-            {pipes?.map((pipe: IPipe) => (
-                <li className="pipe-list__item">
-                    <Pipe pipe={pipe}/> 
-                </li>
-            ))}
-        </ul>
+        <div>
+            <ul className="pipe-list">
+                {pipes?.map((pipe: IPipe) => (
+                    <li className="pipe-list__item">
+                        <Pipe  key={pipe.id} pipe={pipe}/> 
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
 
