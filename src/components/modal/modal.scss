@@ -26,7 +26,8 @@
         padding: 5rem;
         background: white;
         max-height: 100%;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
 
         @media (max-width: 600px) {
             width: 90%;

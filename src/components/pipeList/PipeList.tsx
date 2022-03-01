@@ -14,6 +14,7 @@ function PipeList() {
 
     if(loading) return <h1>Loading...</h1>
     if(error) return <h1>Ops... something is worng</h1>
+    console.log(data)
     
     const pipes = data?.organization?.pipes
             .map((pipe: IPipe) => pipe)
