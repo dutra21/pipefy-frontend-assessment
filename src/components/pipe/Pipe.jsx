@@ -1,10 +1,14 @@
-import { IPipe } from "../../shared/interfaces/pipe.interface"
-import { useModalContext } from "../modal/modal.context"
+import { useModalContext } from "../modal/modal.context.jsx"
 import "./pipe.scss"
 
 function Pipe({ pipe } ) {
     const { openModal } = useModalContext();
-    const handleModal = () => openModal({ pipe: pipe })
+    const handleModal = () => {
+        if(pipe.cards_count !== 0) {
+            openModal({ pipe: pipe })
+        }
+        return;      
+    }
     
     return (
         <div 
@@ -19,11 +23,11 @@ function Pipe({ pipe } ) {
             </div>
             <img className="card__icon" src={`/icons/${pipe?.icon}.png`} aria-hidden="true" alt=""/>
             <div 
+                onClick={handleModal} 
                 className={"card__content " + (pipe?.cards_count !== 0 ? 'pointer' : "")}
-                onClick={handleModal}
             >
                 <h3 className="card__name">{pipe?.name}</h3>
-                <p className="card__count">{pipe?.cards_count} cards</p>
+                <p className="card__count">{(pipe?.cards_count) + " card" + (pipe?.cards_count > 1 ? 's' : "")}</p>
             </div>
         </div>
     )

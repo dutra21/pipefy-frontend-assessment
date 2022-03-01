@@ -8,6 +8,10 @@
     padding: 5rem;
     background-color: #000000c7;
 
+    @media (max-width: 600px) {
+        padding: 1rem;
+    }
+
     &.false{
         display: none;
     }
@@ -21,6 +25,13 @@
         margin: auto;
         padding: 5rem;
         background: white;
+        max-height: 100%;
+        overflow: scroll;
+
+        @media (max-width: 600px) {
+            width: 90%;
+            padding: 2rem;
+        }
     }
 
     &__grid {

@@ -6,4 +6,9 @@
     grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+
+    
+    .pipe-list__item:nth-child(n+1):nth-child(-n+2) .btn__icon {
+        opacity: 1;
+    }
 }

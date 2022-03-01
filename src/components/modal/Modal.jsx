@@ -1,23 +1,23 @@
 import React, { useState} from "react";
 import { useQuery } from "@apollo/client";
-import { useModalContext } from "./modal.context";
+import { useModalContext } from "./modal.context.jsx";
 import { CARDS } from "../../graphql/cards"
+import { LIST_CARD_SIZE } from "../../shared/constants/constants"
 import "./modal.scss"
 
 function Modal() {
     const { modalState: { pipe, visible }, closeModal } = useModalContext();
     const [cards, setCards] = useState([]);
 
-    const { data } = useQuery(CARDS, {
+    useQuery(CARDS, {
         variables: {
             pipeId: pipe?.id,
-            first: 3
+            first: LIST_CARD_SIZE
         },
         onCompleted: (result) => {
             setCards(result?.cards?.edges);
         }
     });
-
 
     return (
         <div className={`modal ${visible}`}>

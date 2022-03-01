@@ -2,9 +2,9 @@ import { useQuery } from "@apollo/client";
 import { ORGANIZATION } from "../../graphql/organization"
 import { ORGANIZATION_ID } from "../../shared/constants/constants";
 import { IPipe } from "../../shared/interfaces/pipe.interface";
-import { ModalProvider } from "../modal/modal.context";
-import Modal from "../modal/Modal.js";
-import Pipe from "../pipe/Pipe.js";
+import { ModalProvider } from "../modal/modal.context.jsx";
+import Modal from "../modal/Modal.jsx";
+import Pipe from "../pipe/Pipe";
 import "./pipelist.scss"
 
 function PipeList() {
