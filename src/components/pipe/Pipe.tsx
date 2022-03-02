@@ -1,7 +1,9 @@
+import { IPipe } from "../../shared/interfaces/pipe.interface.js";
 import { useModalContext } from "../modal/modal.context.jsx"
 import "./pipe.scss"
 
-function Pipe({ pipe } ) {
+function Pipe( pipe: IPipe ) {
+    // @ts-ignore
     const { openModal } = useModalContext();
     const handleModal = () => {
         if(pipe.cards_count !== 0) {

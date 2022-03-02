@@ -1,3 +1,5 @@
+@import "../../shared/styles/commons.scss";
+
 .modal{
     position: fixed;
     top: 0;
@@ -42,6 +44,11 @@
         grid-row-gap: 30px;
     }
 
+    &__footer {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
     .card{
         display: flex;
         flex-direction: column;
@@ -58,5 +65,11 @@
         position: absolute;
         right: 10px;
         top: 10px;
+    }
+
+    .btn__show-more-cards{
+        font-size: 1rem;
+        font-weight: 600;
+        color: $blue;
     }
 }

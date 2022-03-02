@@ -3,7 +3,7 @@ import { ORGANIZATION } from "../../graphql/organization"
 import { ORGANIZATION_ID } from "../../shared/constants/constants";
 import { IPipe } from "../../shared/interfaces/pipe.interface";
 import { ModalProvider } from "../modal/modal.context.jsx";
-import Modal from "../modal/Modal.jsx";
+import Modal from "../modal/Modal";
 import Pipe from "../pipe/Pipe";
 import "./pipelist.scss"
 
@@ -14,7 +14,6 @@ function PipeList() {
 
     if(loading) return <h1>Loading...</h1>
     if(error) return <h1>Ops... something is worng</h1>
-    console.log(data)
     
     const pipes = data?.organization?.pipes
             .map((pipe: IPipe) => pipe)
@@ -28,7 +27,7 @@ function PipeList() {
                 <ul className="pipe-list">
                     {pipes?.map((pipe: IPipe) => (
                         <li className="pipe-list__item">
-                            <Pipe  key={pipe.id} pipe={pipe}/> 
+                            <Pipe {...pipe}  key={pipe.id} /> 
                         </li>
                     ))}
                 </ul>
